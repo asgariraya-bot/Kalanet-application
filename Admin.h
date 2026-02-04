@@ -5,6 +5,8 @@ using namespace std;
 
 class Admin : public User 
 {
+    
 public:
-    Admin(int id, string uname, string pass): User(id, uname, pass, Role::Admin) {}
+
+ Admin(string uname) { username = uname; role = Role::ADMIN;}
 };

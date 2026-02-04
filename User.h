@@ -1,32 +1,33 @@
 #pragma once
-#include<string>
+#include <string>
 using namespace std;
 
-enum class Role{ User , Admin};
+enum class Role { USER, ADMIN };
 
-class User
-{
-    protected:
-    int UserId;
-    string firstName;
-    string LastName;
-    string UserName;
-    string Email;
-    string PhoneNamber;
-    string Password;
-    double Wallet;
+class User {
+private:
+    int userId;
+    string name;
+    string username;
+    string email;
+    string phone;
+    string passwordHash;
     Role role;
 
-    public:
+public:
+    User(int id, const string& n, const string& u, const string& e,
+         const string& p, const string& hash, Role r)
+        : userId(id), name(n), username(u), email(e),
+          phone(p), passwordHash(hash), role(r) {}
 
-    User ();
-    User (int Id , string UserName , string pass,Role role);
+    User() {}
 
+    string getUsername() const { return username; }
+    string getPasswordHash() const { return passwordHash; }
+    Role getRole() const { return role; }
+    string getName() const { return name; }
+    string getEmail() const { return email; }
+    string getPhone() const { return phone; }
 
-    int getUserId()const;
-    string getUserName()const;
-    Role getRole()const;
-
-    void setWallet(double amount);
-    double getWallet()const;
+    void setPasswordHash(const string& hash) { passwordHash = hash; }
 };
