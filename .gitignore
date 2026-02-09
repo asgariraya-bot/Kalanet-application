@@ -1,31 +1,23 @@
-# Ignore build files
+# Build files
 build/
 *.o
 *.obj
 *.exe
 *.dll
-*.moc
+*.lib
+*.pdb
 
-# Qt Creator / IDE
+# Qt Creator generated files
 *.pro.user*
-*.user
-.qtc_clangd/
-CMakeLists.txt.user*
+*.qbs.user*
+*.user*
 
-# Logs / temporary
+# Visual Studio / IDE files
+*.sln
+*.vcxproj*
+*.xcodeproj
+*.DS_Store
+
+# Misc
 *.log
 *.tmp
-*~
-
-# Generated Qt files
-.moc/
-.rcc/
-.uic/
-ui_*.h
-moc_*.cpp
-qrc_*.cpp
-
-# Misc / editor
-*.swp
-.DS_Store
-Thumbs.db
